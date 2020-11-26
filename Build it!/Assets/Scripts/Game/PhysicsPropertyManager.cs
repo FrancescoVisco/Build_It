@@ -28,8 +28,8 @@ public class PhysicsPropertyManager : MonoBehaviour
     [Tooltip("The Audio Controller used to modify the audio based on the events")]
     public AudioController audioController;
    
-    bool timeToggle;
-    bool gravityToggle;
+    bool timeToggle = false;
+    bool gravityToggle = false;
     
     float defaultTimeScale;
     float defaultFixedDeltaTime;
@@ -54,7 +54,7 @@ public class PhysicsPropertyManager : MonoBehaviour
     void Update()
     {
         //Check to see if time change key has been released
-        if (Input.GetKeyUp(timeScaleKey))
+        /*if (Input.GetKeyUp(timeScaleKey))
         {
             //Reverse the time toggle and change the timeScale
             timeToggle = !timeToggle;
@@ -84,10 +84,10 @@ public class PhysicsPropertyManager : MonoBehaviour
                     audioController.FullSpeedAudio();
             }
 
-        }
+        }*/
 
         //Check to see if the gravity key has been pressed and released
-        if (Input.GetKeyUp(gravityKey))
+        /*if (Input.GetKeyUp(gravityKey))
         {
             //Flip the toggle and update the gravity value
             gravityToggle = !gravityToggle;
@@ -113,7 +113,7 @@ public class PhysicsPropertyManager : MonoBehaviour
                 else
                     audioController.AudioForward();
             }
-        }
+        }*/
     }
 
     /// <summary>

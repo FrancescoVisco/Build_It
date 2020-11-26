@@ -84,7 +84,7 @@ public class SpawnedObjectManager : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyUp(kinematicActivateKey)){
+        /*if(Input.GetKeyUp(kinematicActivateKey)){
             isKinematic = !isKinematic;
 
             setImages(isKinematic);
@@ -106,7 +106,8 @@ public class SpawnedObjectManager : MonoBehaviour
             }
 
             ActivateGravity(isKinematic);
-        }           
+        }   */
+        setImages(false);
     }
 
     /// <summary>

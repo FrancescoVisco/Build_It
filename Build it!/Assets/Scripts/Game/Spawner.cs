@@ -48,7 +48,7 @@ public class Spawner : MonoBehaviour
     GameObject parent;
     float distance;
     Vector3 currentPos;
-    Quaternion currentRotation;
+    //Quaternion currentRotation;
     public float Rotspeed;
     public Quaternion RotAngle;
 
@@ -74,7 +74,7 @@ public class Spawner : MonoBehaviour
         
         Vector3 lookPos = cam.transform.position;
         lookPos.y = 0;
-        currentRotation = Quaternion.LookRotation(lookPos);
+        //currentRotation = Quaternion.LookRotation(lookPos);
     }
 
     void Update()
@@ -179,7 +179,7 @@ public class Spawner : MonoBehaviour
     {
         RecalculateCurrentPosAndRot();
         parent.transform.position = currentPos;
-        parent.transform.rotation = currentRotation;
+        //parent.transform.rotation = currentRotation;
     }
 
     /// <summary>
