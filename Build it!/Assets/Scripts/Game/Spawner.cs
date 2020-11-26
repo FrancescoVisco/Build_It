@@ -88,7 +88,7 @@ public class Spawner : MonoBehaviour
 
         outlinedObjects[cycleIndex].SetActive(true);
 
-        if(Input.GetKey(KeyCode.R))
+        if(Input.GetMouseButton(1))
         {
             outlinedObjects[cycleIndex].transform.Rotate(Vector3.forward * Rotspeed);
             RotAngle = outlinedObjects[cycleIndex].transform.rotation;

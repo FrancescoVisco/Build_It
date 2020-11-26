@@ -24,7 +24,7 @@ public class SpawnedObjectManager : MonoBehaviour
 
     List<GameObject> spawnedBodies = new List<GameObject>();
 
-    bool isKinematic = true;
+    public bool isKinematic = true;
 
     void Start(){
         kinematicKeyText.text = kinematicActivateKey.ToString().ToUpper();
@@ -106,7 +106,7 @@ public class SpawnedObjectManager : MonoBehaviour
             }
 
             ActivateGravity(isKinematic);
-        }     
+        }           
     }
 
     /// <summary>
