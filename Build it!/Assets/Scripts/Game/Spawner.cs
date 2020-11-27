@@ -51,6 +51,8 @@ public class Spawner : MonoBehaviour
     //Quaternion currentRotation;
     public float Rotspeed;
     public Quaternion RotAngle;
+    public int[] NObjects;
+    public int[] MaxObjects;
 
     void Start()
     {
@@ -97,17 +99,22 @@ public class Spawner : MonoBehaviour
         //Mouse left click - Instantiate the selected object
         if (Input.GetMouseButtonUp(0) && !Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.LeftAlt))
         {
-            var spawned = Instantiate(objects[cycleIndex], currentPos, RotAngle);      
-            AddObject(spawned);      
+            if(NObjects[cycleIndex] < MaxObjects[cycleIndex])
+            {
+                var spawned = Instantiate(objects[cycleIndex], currentPos, RotAngle);      
+                AddObject(spawned);
+                NObjects[cycleIndex] += 1;  
+            }
+    
 
-            if (spawnParticle != null)
+            if (spawnParticle != null && NObjects[cycleIndex] < MaxObjects[cycleIndex])
             {
                 var particle = Instantiate(spawnParticle, currentPos, RotAngle);
                 Destroy(particle, 3);
             }
 
             //animation
-            spawned.transform.DOScale(0, .25f).SetEase(Ease.OutBounce).From();
+            //spawned.transform.DOScale(0, .25f).SetEase(Ease.OutBounce).From();
 
             //Play random forward audio clip
             if(spawnedObjectManager.audioController != null)
