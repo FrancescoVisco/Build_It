@@ -97,7 +97,7 @@ public class Spawner : MonoBehaviour
         }
 
         //Mouse left click - Instantiate the selected object
-        if (Input.GetMouseButtonUp(0) && !Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.LeftAlt))
+        if (Input.GetMouseButtonUp(0) && GameObject.Find("Timer").GetComponent<UITimer>().time > 0.5f && GameObject.Find("LevelGoal").GetComponent<Goal>().time > 0.5f)
         {
             if(NObjects[cycleIndex] < MaxObjects[cycleIndex])
             {

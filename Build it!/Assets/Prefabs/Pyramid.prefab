@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 1247563462677517087}
   - component: {fileID: -3186323101931761238}
   - component: {fileID: 3744356638859954473}
+  - component: {fileID: 8106547468514215259}
   m_Layer: 0
   m_Name: Pyramid
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,3 +114,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: a78638f7eb62d894398fa81a1e93d0f0, type: 3}
+--- !u!114 &8106547468514215259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679175276201273283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e36c12de4fcedc4baa13d47a3ca03a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

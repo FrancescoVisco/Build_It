@@ -38,7 +38,7 @@ public class LevelLoader : MonoBehaviour
 
     public void LoadNextLevel()
     {
-      if(GameObject.Find("Timer").GetComponent<UITimer>().time < 0)
+      if(GameObject.Find("Timer").GetComponent<UITimer>().time < 0 || GameObject.Find("LevelGoal").GetComponent<Goal>().time < 0)
       {
          StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex));
       }
