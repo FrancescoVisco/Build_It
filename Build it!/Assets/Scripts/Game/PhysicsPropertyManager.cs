@@ -28,8 +28,8 @@ public class PhysicsPropertyManager : MonoBehaviour
     [Tooltip("The Audio Controller used to modify the audio based on the events")]
     public AudioController audioController;
    
-    bool timeToggle = false;
-    bool gravityToggle = false;
+    //bool timeToggle = false;
+    //bool gravityToggle = false;
     
     float defaultTimeScale;
     float defaultFixedDeltaTime;
@@ -43,12 +43,12 @@ public class PhysicsPropertyManager : MonoBehaviour
         defaultGravity = Physics.gravity;
 
         //Update the key labels in the UI
-        timeKeyText.text = timeScaleKey.ToString().ToUpper();
-        gravityKeyText.text = gravityKey.ToString().ToUpper();
+        //timeKeyText.text = timeScaleKey.ToString().ToUpper();
+        //gravityKeyText.text = gravityKey.ToString().ToUpper();
 
         //Update the UI icons
-        setTimeImage(timeToggle);
-        setGravityImages(gravityToggle);
+        //setTimeImage(timeToggle);
+        //setGravityImages(gravityToggle);
     }
 
     void Update()
@@ -119,7 +119,7 @@ public class PhysicsPropertyManager : MonoBehaviour
     /// <summary>
     /// Toggle the gravity UI images based on the current gravity value
     /// </summary>
-    void setGravityImages(bool v)
+    /*void setGravityImages(bool v)
     {
         var onColor = gravityOnImage.color;
         onColor.a = v ? .3f : 1f;
@@ -128,15 +128,15 @@ public class PhysicsPropertyManager : MonoBehaviour
         var offColor = gravityOffImage.color;
         offColor.a = v ? 1f : .3f;
         gravityOffImage.color = offColor;
-    }
+    }*/
 
     /// <summary>
     /// Highlight the time UI image based on the current time value
     /// </summary>
-    void setTimeImage(bool v)
+    /*void setTimeImage(bool v)
     {
         var timeColor = timeImage.color;
         timeColor.a = v ? 1f : .3f;
         timeImage.color = timeColor;
-    }
+    }*/
 }

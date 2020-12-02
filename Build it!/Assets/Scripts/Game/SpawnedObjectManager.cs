@@ -27,8 +27,8 @@ public class SpawnedObjectManager : MonoBehaviour
     public bool isKinematic = true;
 
     void Start(){
-        kinematicKeyText.text = kinematicActivateKey.ToString().ToUpper();
-        setImages(isKinematic);
+        //kinematicKeyText.text = kinematicActivateKey.ToString().ToUpper();
+        //setImages(isKinematic);
     }
 
     /// <summary>
@@ -107,7 +107,7 @@ public class SpawnedObjectManager : MonoBehaviour
 
             ActivateGravity(isKinematic);
         }   */
-        setImages(false);
+        //setImages(false);
     }
 
     /// <summary>
