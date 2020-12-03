@@ -52,7 +52,10 @@ public class Spawner : MonoBehaviour
     public float Rotspeed;
     public Quaternion RotAngle;
     public int[] NObjects;
+    public int SObjects;
     public int[] MaxObjects;
+    public int SMax;
+    public bool PauseOn;
 
     void Start()
     {
@@ -65,6 +68,14 @@ public class Spawner : MonoBehaviour
         RecalculateCurrentPosAndRot();
 
         CinemachineCore.CameraUpdatedEvent.AddListener(UpdateObjectPosition);
+    }
+
+    void Awake()
+    {
+        foreach (int value in MaxObjects) 
+        {
+            SMax += value;
+        }
     }
 
     /// <summary>
@@ -87,26 +98,39 @@ public class Spawner : MonoBehaviour
             distance += Time.deltaTime * (dist > 0 ? scrollSpeed : -scrollSpeed);*/
 
         distance = Mathf.Clamp(distance, minDistance, maxDistance);
+        if(PauseOn == false)
+        {
+            outlinedObjects[cycleIndex].SetActive(true);    
+        }
+        else
+        {
+            outlinedObjects[cycleIndex].SetActive(false);
+        }
+        
+        PauseOn = GameObject.Find("CanvasPause").GetComponent<PauseMenu>().GameIsPaused;
 
-        outlinedObjects[cycleIndex].SetActive(true);
-
-        if(Input.GetMouseButton(1))
+        if(Input.GetMouseButton(1) && PauseOn == false)
         {
             outlinedObjects[cycleIndex].transform.Rotate(Vector3.forward * Rotspeed);
             RotAngle = outlinedObjects[cycleIndex].transform.rotation;
         }
 
+        if(SObjects > GameObject.Find("PointsSystem").GetComponent<PointsSystem>().MaxObj)
+        {
+           SObjects = GameObject.Find("PointsSystem").GetComponent<PointsSystem>().MaxObj;
+        }
+
         //Mouse left click - Instantiate the selected object
-        if (Input.GetMouseButtonUp(0) && GameObject.Find("Timer").GetComponent<UITimer>().time > 0.5f && GameObject.Find("LevelGoal").GetComponent<Goal>().time > 0.5f)
+        if (Input.GetMouseButtonUp(0) && GameObject.Find("Timer").GetComponent<UITimer>().time > 0.5f && GameObject.Find("LevelGoal").GetComponent<Goal>().time > 0.5f && PauseOn == false)
         {
             if(NObjects[cycleIndex] < MaxObjects[cycleIndex])
             {
-                var spawned = Instantiate(objects[cycleIndex], currentPos, RotAngle);      
+                var spawned = Instantiate(objects[cycleIndex], currentPos, RotAngle);  
+                SObjects += 1;    
                 AddObject(spawned);
                 NObjects[cycleIndex] += 1;  
             }
     
-
             if (spawnParticle != null && NObjects[cycleIndex] < MaxObjects[cycleIndex])
             {
                 var particle = Instantiate(spawnParticle, currentPos, RotAngle);
@@ -121,7 +145,7 @@ public class Spawner : MonoBehaviour
                 spawnedObjectManager.audioController.PlayRandomClip(spawnedObjectManager.audioController.forwardNoteClips);
         }
         //LeftShift + Mouse left click - Raycast and if you hit a spawned object, destroy it!
-        else if (Input.GetKey(KeyCode.LeftShift) && Input.GetMouseButtonUp(0))
+        else if (Input.GetKey(KeyCode.LeftShift) && Input.GetMouseButtonUp(0) && PauseOn == false)
         {
             RaycastHit hit;
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);

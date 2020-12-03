@@ -142,13 +142,13 @@ namespace UnityTemplateProjects
             Vector3 translation = Vector3.zero;
 
             // Exit Sample  
-            if (Input.GetKey(KeyCode.Escape))
+            /*if (Input.GetKey(KeyCode.Escape))
             {
                 Application.Quit();
 				#if UNITY_EDITOR
 				UnityEditor.EditorApplication.isPlaying = false; 
 				#endif
-            }
+            }*/
             
 
             /*if (Input.GetMouseButton(1) || !rightClickToLook || (Input.GetKey(KeyCode.LeftAlt) && Input.GetMouseButton(0)))

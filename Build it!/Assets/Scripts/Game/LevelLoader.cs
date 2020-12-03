@@ -38,14 +38,17 @@ public class LevelLoader : MonoBehaviour
 
     public void LoadNextLevel()
     {
-      if(GameObject.Find("Timer").GetComponent<UITimer>().time < 0 || GameObject.Find("LevelGoal").GetComponent<Goal>().time < 0)
+      if(scene != "0_MainMenu")
       {
-         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex));
+         if(GameObject.Find("Timer").GetComponent<UITimer>().time < 0 || GameObject.Find("CanvasPause").GetComponent<PauseMenu>().GameIsPaused == true)
+         {
+            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex));
+         }
+         else
+         {
+            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex+1));   
+         }
       }
-      else
-      {
-          //
-      }  
     }
 
     IEnumerator LoadLevel(int LevelIndex)
