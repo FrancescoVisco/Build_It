@@ -10,6 +10,7 @@ public class LevelLoader : MonoBehaviour
     public Animator transition;
     public float transitionTime;
     public bool Fade = false;
+    public int SceneToLoad;
 
     private Scene ThisScene;
     private string scene;
@@ -21,34 +22,33 @@ public class LevelLoader : MonoBehaviour
 
        if(Fade == true)
        {
-          LoadNextLevel();
+          LoadNextLevel(SceneToLoad);
           transition.SetBool("Fade", true);
        }
-
-       /*if(Input.GetKeyDown(KeyCode.L))
+       
+       if(scene != "0_MainMenu")
        {
-         Fade = true;
-         
-         if(scene == "Last")
-         {
-            Fade = true;
-         }
-       }*/
-    }
-
-    public void LoadNextLevel()
-    {
-      if(scene != "0_MainMenu")
-      {
          if(GameObject.Find("Timer").GetComponent<UITimer>().time < 0 || GameObject.Find("CanvasPause").GetComponent<PauseMenu>().GameIsPaused == true)
          {
-            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex));
+            SceneToLoad = SceneManager.GetActiveScene().buildIndex;
          }
          else
          {
-            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex+1));   
+           SceneToLoad = SceneManager.GetActiveScene().buildIndex+1;
          }
-      }
+       }
+
+       if(SceneToLoad > PlayerPrefs.GetInt("levelAt"))
+       {
+          PlayerPrefs.SetInt("levelAt", SceneToLoad);
+       }
+    }
+
+    public void LoadNextLevel(int SceneToLoad)
+    {
+
+      StartCoroutine(LoadLevel(SceneToLoad));
+
     }
 
     IEnumerator LoadLevel(int LevelIndex)
