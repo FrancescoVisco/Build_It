@@ -20,27 +20,12 @@ public class LevelLoader : MonoBehaviour
        ThisScene = SceneManager.GetActiveScene();
        scene = ThisScene.name;
  
-      if(scene != "0_MainMenu")
-      {
-         if(Fade == true)
-         {
-            LoadNextLevel(SceneToLoad);
-            transition.SetBool("Fade", true);
-         }
 
-         if(GameObject.Find("Timer").GetComponent<UITimer>().time < 0 || GameObject.Find("CanvasPause").GetComponent<PauseMenu>().GameIsPaused == true)
-         {
-            SceneToLoad = SceneManager.GetActiveScene().buildIndex;
-         }
-         else
-         {
-           SceneToLoad = SceneManager.GetActiveScene().buildIndex+1;
-         }
-      }        
-      else if(Fade == true)
+      if(Fade == true)
       {
+         LoadNextLevel(SceneToLoad);
          transition.SetBool("Fade", true);
-      }
+      }      
 
       if(SceneToLoad > PlayerPrefs.GetInt("levelAt"))
       {

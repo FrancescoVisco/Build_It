@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
@@ -10,7 +11,9 @@ public class UITimer : MonoBehaviour {
     public float time;
     public float StartTimer;
     public TextMeshProUGUI timeText;
+    public GameObject PanelGameOver;
     public bool GameOn;
+    public bool TimerOff = false;
 
 	void Start () 
     {
@@ -32,7 +35,8 @@ public class UITimer : MonoBehaviour {
 
        if(time < 0)
        {
-           GameObject.Find("LevelLoader").GetComponent<LevelLoader>().Fade = true;
+           PanelGameOver.SetActive(true);
+           TimerOff = true;
        }
 	}
 

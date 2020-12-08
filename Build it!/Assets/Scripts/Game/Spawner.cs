@@ -14,10 +14,6 @@ public class Spawner : MonoBehaviour
     public float maxDistance = 10;
     [Tooltip("Initial distance from camera of the placeholder object.")]
     public float initialDistance = 2;
-    [Tooltip("The keyboard button to select the previous element.")]
-    public KeyCode previusElementKey = KeyCode.V;
-    [Tooltip("The keyboard button to select the next element.")]
-    public KeyCode nextElementKey = KeyCode.B;
     [Space]
 
     [Tooltip("List of spawnables")]
@@ -56,6 +52,8 @@ public class Spawner : MonoBehaviour
     public int[] MaxObjects;
     public int SMax;
     public bool PauseOn;
+    public bool GoalOn;
+    public bool TimerOff;
 
     void Start()
     {
@@ -98,7 +96,7 @@ public class Spawner : MonoBehaviour
             distance += Time.deltaTime * (dist > 0 ? scrollSpeed : -scrollSpeed);*/
 
         distance = Mathf.Clamp(distance, minDistance, maxDistance);
-        if(PauseOn == false)
+        if(PauseOn == false && PauseOn == false && GoalOn == false && TimerOff == false)
         {
             outlinedObjects[cycleIndex].SetActive(true);    
         }
@@ -108,8 +106,10 @@ public class Spawner : MonoBehaviour
         }
         
         PauseOn = GameObject.Find("CanvasPause").GetComponent<PauseMenu>().GameIsPaused;
-
-        if(Input.GetMouseButton(1) && PauseOn == false)
+        GoalOn = GameObject.Find("LevelGoal").GetComponent<Goal>().GoalOn;
+        TimerOff = GameObject.Find("Timer").GetComponent<UITimer>().TimerOff;
+        
+        if(Input.GetMouseButton(1) && PauseOn == false && GoalOn == false && TimerOff == false)
         {
             outlinedObjects[cycleIndex].transform.Rotate(Vector3.forward * Rotspeed);
             RotAngle = outlinedObjects[cycleIndex].transform.rotation;
@@ -121,7 +121,7 @@ public class Spawner : MonoBehaviour
         }
 
         //Mouse left click - Instantiate the selected object
-        if (Input.GetMouseButtonUp(0) && GameObject.Find("Timer").GetComponent<UITimer>().time > 0.5f && GameObject.Find("LevelGoal").GetComponent<Goal>().time > 0.5f && PauseOn == false)
+        if (Input.GetMouseButtonUp(0) && GameObject.Find("Timer").GetComponent<UITimer>().time > 0.5f && GameObject.Find("LevelGoal").GetComponent<Goal>().time > 0.5f && PauseOn == false && GoalOn == false && TimerOff == false)
         {
             if(NObjects[cycleIndex] < MaxObjects[cycleIndex])
             {
@@ -144,7 +144,7 @@ public class Spawner : MonoBehaviour
             if(spawnedObjectManager.audioController != null)
                 spawnedObjectManager.audioController.PlayRandomClip(spawnedObjectManager.audioController.forwardNoteClips);
         }
-        //LeftShift + Mouse left click - Raycast and if you hit a spawned object, destroy it!
+        /*LeftShift + Mouse left click - Raycast and if you hit a spawned object, destroy it!
         else if (Input.GetKey(KeyCode.LeftShift) && Input.GetMouseButtonUp(0) && PauseOn == false)
         {
             RaycastHit hit;
@@ -161,17 +161,17 @@ public class Spawner : MonoBehaviour
                         spawnedObjectManager.audioController.PlayRandomClip(spawnedObjectManager.audioController.reverseNoteClips);
                 }
             }
-        }
+        }*/
 
         //Cycle through the list of outlined objects
-        if (Input.GetKeyDown(previusElementKey))
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
         {
             CycleList(false);
             outlinedObjects[cycleIndex].transform.rotation = new Quaternion(0,0,0,0);
             RotAngle = new Quaternion(0,0,0,0);
         }
             
-        else if (Input.GetKeyDown(nextElementKey))
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
             CycleList(true);
             outlinedObjects[cycleIndex].transform.rotation = new Quaternion(0,0,0,0);

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
@@ -13,6 +14,8 @@ public class Goal : MonoBehaviour
     public GameObject CountdownText;
     public bool TriggeredLine = false;
     public bool CoroutineOn = false;
+    public GameObject PanelGoal;
+    public bool GoalOn = false;
     
     void Start()
     {
@@ -30,7 +33,9 @@ public class Goal : MonoBehaviour
 
         if(time < 0)
         {
-           GameObject.Find("LevelLoader").GetComponent<LevelLoader>().Fade = true;
+           PanelGoal.SetActive(true);
+           GoalOn = true;
+           CountdownText.SetActive(false);
          }
 
         
@@ -46,7 +51,7 @@ public class Goal : MonoBehaviour
             time = timeAmt; 
         }
 
-        if(CoroutineOn == true)
+        if(CoroutineOn == true && GoalOn == false)
         {
             CountdownText.SetActive(true);
         }

@@ -11,13 +11,7 @@ public class MoveToLevel : MonoBehaviour
 
     public void Level()
     {
-        GameObject.Find("LevelLoader").GetComponent<LevelLoader>().Fade = true;
-        StartCoroutine(LoadLevel(SceneToLoad));
-    }
-
-    IEnumerator LoadLevel(int LevelIndex)
-    {  
-       yield return new WaitForSeconds(1.0f);
-       SceneManager.LoadScene(LevelIndex);
+        GameObject.Find("LevelLoader").GetComponent<LevelLoader>().SceneToLoad = SceneToLoad;
+        GameObject.Find("LevelLoader").GetComponent<LevelLoader>().Fade = true;       
     }
 }
