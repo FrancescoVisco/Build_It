@@ -105,7 +105,7 @@ public class Spawner : MonoBehaviour
             outlinedObjects[cycleIndex].SetActive(false);
         }
         
-        PauseOn = GameObject.Find("CanvasPause").GetComponent<PauseMenu>().GameIsPaused;
+        PauseOn = GameObject.Find("CanvasPause").GetComponent<UIPause>().GameIsPaused;
         GoalOn = GameObject.Find("LevelGoal").GetComponent<Goal>().GoalOn;
         TimerOff = GameObject.Find("Timer").GetComponent<UITimer>().TimerOff;
         

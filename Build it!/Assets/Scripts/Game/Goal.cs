@@ -34,6 +34,7 @@ public class Goal : MonoBehaviour
         if(time < 0)
         {
            PanelGoal.SetActive(true);
+           GameObject.Find("Timer").GetComponent<UITimer>().TimerOff = true;
            GoalOn = true;
            CountdownText.SetActive(false);
          }

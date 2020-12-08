@@ -12,11 +12,12 @@ public class PauseMenu : MonoBehaviour
     private int currentSceneIndex;
     public GameObject PauseMenuUI;
 
-    private Scene activeScene;
+    public int activeScene;
+    private bool CoroutineEnd;
 
     private void Start()
     {
-        activeScene = SceneManager.GetActiveScene();
+        activeScene = SceneManager.GetActiveScene().buildIndex;
     }
 
     void Update()
@@ -37,6 +38,11 @@ public class PauseMenu : MonoBehaviour
         {
             StopCoroutine(Delay());
         }
+
+        if(CoroutineEnd == true)
+        {
+            StopCoroutine(RestartExitDelay(0)); 
+        }
     }
 
 
@@ -53,9 +59,8 @@ public class PauseMenu : MonoBehaviour
     {
         //Cursor.lockState = CursorLockMode.Locked;
         //Cursor.visible = false;
-        GameObject.Find("LevelLoader").GetComponent<LevelLoader>().Fade = true;
-        Time.timeScale = 1f;
-        StartCoroutine(RestartDelay());   
+        //StartCoroutine(RestartExitDelay(activeScene));  
+        SceneManager.LoadScene(activeScene); 
     }
 
     public void Pause()
@@ -69,9 +74,8 @@ public class PauseMenu : MonoBehaviour
 
     public void ExitToMenu()
     {
+        //StartCoroutine(RestartExitDelay(0)); 
         SceneManager.LoadScene(0);
-        Time.timeScale = 1f;
-        GameIsPaused = false;
     }
 
     IEnumerator Delay()
@@ -81,9 +85,12 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = false;
     }
 
-    IEnumerator RestartDelay()
+    IEnumerator RestartExitDelay(int SceneToLoad)
     {
-        yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(activeScene.name); 
+        //GameObject.Find("LevelLoader").GetComponent<LevelLoader>().Fade = true;
+        yield return new WaitForSeconds(1.0f);
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneToLoad); 
+        CoroutineEnd = true;
     }
 }
