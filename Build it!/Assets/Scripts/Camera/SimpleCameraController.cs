@@ -11,6 +11,10 @@ namespace UnityTemplateProjects
 {
     public class SimpleCameraController : MonoBehaviour
     {
+        public bool PauseOn;
+        public bool GoalOn;
+        public bool TimerOff;
+
         class CameraState
         {
             public float yaw;
@@ -110,29 +114,32 @@ namespace UnityTemplateProjects
         Vector3 GetInputTranslationDirection()
         {
             Vector3 direction = new Vector3();
-            /*if (Input.GetKey(KeyCode.W))
+            if(PauseOn == false && GoalOn == false && TimerOff == false)
             {
-                direction += Vector3.forward;
-            }
-            if (Input.GetKey(KeyCode.S))
-            {
-                direction += Vector3.back;
-            }*/
-            if (Input.GetKey(KeyCode.A))
-            {
-                direction += Vector3.left;
-            }
-            if (Input.GetKey(KeyCode.D))
-            {
-                direction += Vector3.right;
-            }
-            if (Input.GetKey(KeyCode.S))
-            {
-                direction += Vector3.down;
-            }
-            if (Input.GetKey(KeyCode.W))
-            {
-                direction += Vector3.up;
+                /*if (Input.GetKey(KeyCode.W))
+                {
+                    direction += Vector3.forward;
+                }
+                if (Input.GetKey(KeyCode.S))
+                {
+                    direction += Vector3.back;
+                }*/
+                if (Input.GetKey(KeyCode.A))
+                {
+                    direction += Vector3.left;
+                }
+                if (Input.GetKey(KeyCode.D))
+                {
+                    direction += Vector3.right;
+                }
+                if (Input.GetKey(KeyCode.S))
+                {
+                    direction += Vector3.down;
+                }
+                if (Input.GetKey(KeyCode.W))
+                {
+                    direction += Vector3.up;
+                }
             }
             return direction;
         }
@@ -140,6 +147,9 @@ namespace UnityTemplateProjects
         void Update()
         {
             Vector3 translation = Vector3.zero;
+            PauseOn = GameObject.Find("CanvasPause").GetComponent<UIPause>().GameIsPaused;
+            GoalOn = GameObject.Find("LevelGoal").GetComponent<Goal>().GoalOn;
+            TimerOff = GameObject.Find("Timer").GetComponent<UITimer>().TimerOff;
 
             // Exit Sample  
             /*if (Input.GetKey(KeyCode.Escape))

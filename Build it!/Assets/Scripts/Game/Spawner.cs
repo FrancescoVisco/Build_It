@@ -96,7 +96,7 @@ public class Spawner : MonoBehaviour
             distance += Time.deltaTime * (dist > 0 ? scrollSpeed : -scrollSpeed);*/
 
         distance = Mathf.Clamp(distance, minDistance, maxDistance);
-        if(PauseOn == false && PauseOn == false && GoalOn == false && TimerOff == false)
+        if(PauseOn == false && GoalOn == false && TimerOff == false)
         {
             outlinedObjects[cycleIndex].SetActive(true);    
         }
