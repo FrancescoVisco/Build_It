@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PointsSystem : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class PointsSystem : MonoBehaviour
     public float Star2Perc;
     public float Star3Perc;
     public GameObject[] Star;
+    public int[] Score;
+    public int StarsActivated;
 
     void Start()
     {
@@ -46,6 +49,8 @@ public class PointsSystem : MonoBehaviour
             Star[0].SetActive(true);
             Star[1].SetActive(false);
             Star[2].SetActive(false);
+            StarsActivated = 3;
+            SaveScore(StarsActivated);
           }
 
           if(PointPerc > Star2Perc && PointPerc < Star3Perc)
@@ -53,6 +58,8 @@ public class PointsSystem : MonoBehaviour
             Star[0].SetActive(true);
             Star[1].SetActive(true);
             Star[2].SetActive(false);  
+            StarsActivated = 2;
+            SaveScore(StarsActivated);
           }
 
           if(PointPerc > Star3Perc)
@@ -60,7 +67,27 @@ public class PointsSystem : MonoBehaviour
             Star[0].SetActive(true);
             Star[1].SetActive(true);
             Star[2].SetActive(true);
+            StarsActivated = 3;
+            SaveScore(StarsActivated);
           }
+        }
+    }
+
+    public void SaveScore(int StarsActivated)
+    {
+        if(SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            PlayerPrefs.SetInt("Level1", StarsActivated);
+        }   
+
+        if(SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            PlayerPrefs.SetInt("Level2", StarsActivated);
+        }
+
+        if(SceneManager.GetActiveScene().buildIndex == 3)
+        {
+            PlayerPrefs.SetInt("Level3", StarsActivated);
         }
     }
 }

@@ -13,7 +13,7 @@ public class Reset : Editor
 
         DeletePlayerPrefs myscript = (DeletePlayerPrefs)target;
 
-        if(GUILayout.Button("Reset Level Progression"))
+        if(GUILayout.Button("Reset Level Progress"))
         {
             myscript.Reset();
         }
