@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2487576291221285854}
   - component: {fileID: 4723566923782582827}
   m_Layer: 0
-  m_Name: BasicShape7
+  m_Name: Culumn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,10 +57,11 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 13fe4de3b1a06074784f25eb6757aa23, type: 2}
+  - {fileID: 2100000, guid: 8628bbb96b7452f408391633ad99fd6c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -81,6 +82,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!54 &2487576291221285854
 Rigidbody:
   m_ObjectHideFlags: 0
