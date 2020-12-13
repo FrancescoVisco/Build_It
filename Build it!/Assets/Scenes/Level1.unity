@@ -1362,6 +1362,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7630607109450561766, guid: 3fb022f1ba8a2094f9b8c05d111b1c5d,
         type: 3}
+      propertyPath: objects.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630607109450561766, guid: 3fb022f1ba8a2094f9b8c05d111b1c5d,
+        type: 3}
+      propertyPath: NObjects.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630607109450561766, guid: 3fb022f1ba8a2094f9b8c05d111b1c5d,
+        type: 3}
+      propertyPath: MaxObjects.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630607109450561766, guid: 3fb022f1ba8a2094f9b8c05d111b1c5d,
+        type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 643450318}
@@ -1369,7 +1384,7 @@ PrefabInstance:
         type: 3}
       propertyPath: objects.Array.data[1]
       value: 
-      objectReference: {fileID: 1085812807173788198, guid: d51c0a0ca6ddec84a988b0d44b2eede7,
+      objectReference: {fileID: 3240878976750633246, guid: ec3e00cff69b4ad4494d97715d64d8d1,
         type: 3}
     - target: {fileID: 7630607109450561766, guid: 3fb022f1ba8a2094f9b8c05d111b1c5d,
         type: 3}
@@ -1381,8 +1396,23 @@ PrefabInstance:
         type: 3}
       propertyPath: objects.Array.data[2]
       value: 
-      objectReference: {fileID: 8447508820980303746, guid: bce961386a4956644b6b2af713872b64,
+      objectReference: {fileID: 6950069037017141431, guid: 77e63fdc92a3bdc4faa6277ff3da831e,
         type: 3}
+    - target: {fileID: 7630607109450561766, guid: 3fb022f1ba8a2094f9b8c05d111b1c5d,
+        type: 3}
+      propertyPath: MaxObjects.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630607109450561766, guid: 3fb022f1ba8a2094f9b8c05d111b1c5d,
+        type: 3}
+      propertyPath: MaxObjects.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630607109450561766, guid: 3fb022f1ba8a2094f9b8c05d111b1c5d,
+        type: 3}
+      propertyPath: MaxObjects.Array.data[2]
+      value: 10000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fb022f1ba8a2094f9b8c05d111b1c5d, type: 3}
 --- !u!1001 &7674501842323869403
@@ -1466,6 +1496,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Environment
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674501843414280780, guid: b82b050f09f2cba4292ddb41e4863fe1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b82b050f09f2cba4292ddb41e4863fe1, type: 3}

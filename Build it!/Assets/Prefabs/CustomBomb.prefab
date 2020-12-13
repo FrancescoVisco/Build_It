@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 1
-  power: 100
+  power: 500
   collisionThreshold: 1
   explosionCountDown: 1.5
   blinkFrequency: 2
