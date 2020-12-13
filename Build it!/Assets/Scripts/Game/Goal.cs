@@ -33,7 +33,7 @@ public class Goal : MonoBehaviour
 
         if(time < 0)
         {
-           PanelGoal.SetActive(true);
+           StartCoroutine(WaitPanel());
            GameObject.Find("Timer").GetComponent<UITimer>().TimerOff = true;
            GoalOn = true;
            CountdownText.SetActive(false);
@@ -78,5 +78,11 @@ public class Goal : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         CoroutineOn = true;
+    }
+
+    IEnumerator WaitPanel()
+    {
+        yield return new WaitForSeconds(1.6f);
+        PanelGoal.SetActive(true);
     }
 }
