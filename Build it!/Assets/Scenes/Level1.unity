@@ -1377,6 +1377,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4097712343389441652, guid: c84d7510dfa654e42829f8f1db856482,
         type: 3}
+    - target: {fileID: 7630607109450561766, guid: 3fb022f1ba8a2094f9b8c05d111b1c5d,
+        type: 3}
+      propertyPath: objects.Array.data[2]
+      value: 
+      objectReference: {fileID: 8447508820980303746, guid: bce961386a4956644b6b2af713872b64,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fb022f1ba8a2094f9b8c05d111b1c5d, type: 3}
 --- !u!1001 &7674501842323869403
@@ -1474,6 +1480,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CanvasLevelLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 8678100192398509027, guid: 6330f353a69e51c4089a69bf9717fdbd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8678100192398509036, guid: 6330f353a69e51c4089a69bf9717fdbd,
         type: 3}

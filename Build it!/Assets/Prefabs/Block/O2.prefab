@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4289734810279556860}
   - component: {fileID: 1202099384384869887}
   - component: {fileID: -8263777015460300622}
+  - component: {fileID: 1844852570523927970}
   m_Layer: 0
   m_Name: O2
   m_TagString: Untagged
@@ -414,9 +415,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 581165376792753343}
   serializedVersion: 2
-  m_Mass: 0.2
+  m_Mass: 1
   m_Drag: 0.5
-  m_AngularDrag: 0.1
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -435,6 +436,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Material: {fileID: 2100000, guid: dbd746886cff22446944d269cd99c496, type: 2}
+--- !u!65 &1844852570523927970
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581165376792753343}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.1, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2435476399774337345
 GameObject:
   m_ObjectHideFlags: 0

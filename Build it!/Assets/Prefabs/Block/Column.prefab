@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6628528413769915589}
   - component: {fileID: 5801862852429572987}
   - component: {fileID: 7191699786939389074}
+  - component: {fileID: -3590261740423409123}
   m_Layer: 0
   m_Name: Column
   m_TagString: Block
@@ -326,3 +327,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Material: {fileID: 2100000, guid: dbd746886cff22446944d269cd99c496, type: 2}
+--- !u!54 &-3590261740423409123
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3761780395057375006}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0.5
+  m_AngularDrag: 0.5
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 2

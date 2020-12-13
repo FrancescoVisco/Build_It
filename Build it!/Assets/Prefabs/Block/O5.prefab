@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 2414720397150114569}
   - component: {fileID: 1711363351678543132}
   - component: {fileID: 2336167247580268002}
+  - component: {fileID: -927860531605177600}
   m_Layer: 0
   m_Name: O5
   m_TagString: Untagged
@@ -2153,9 +2154,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5813949786836123663}
   serializedVersion: 2
-  m_Mass: 0.2
+  m_Mass: 1
   m_Drag: 0.5
-  m_AngularDrag: 0.1
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -2174,3 +2175,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Material: {fileID: 2100000, guid: dbd746886cff22446944d269cd99c496, type: 2}
+--- !u!65 &-927860531605177600
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5813949786836123663}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.1, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}

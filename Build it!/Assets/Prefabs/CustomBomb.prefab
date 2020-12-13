@@ -191,8 +191,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b14ab19b700d4c87beb5823b030b1b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
-  power: 500
+  radius: 1
+  power: 100
   collisionThreshold: 1
   explosionCountDown: 1.5
   blinkFrequency: 2
