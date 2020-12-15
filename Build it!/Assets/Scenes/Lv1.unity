@@ -2555,17 +2555,22 @@ PrefabInstance:
     - target: {fileID: 7630607109450561766, guid: 3fb022f1ba8a2094f9b8c05d111b1c5d,
         type: 3}
       propertyPath: MaxObjects.Array.data[0]
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7630607109450561766, guid: 3fb022f1ba8a2094f9b8c05d111b1c5d,
         type: 3}
       propertyPath: MaxObjects.Array.data[1]
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7630607109450561766, guid: 3fb022f1ba8a2094f9b8c05d111b1c5d,
         type: 3}
       propertyPath: MaxObjects.Array.data[2]
       value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630607109450561766, guid: 3fb022f1ba8a2094f9b8c05d111b1c5d,
+        type: 3}
+      propertyPath: Rotspeed
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fb022f1ba8a2094f9b8c05d111b1c5d, type: 3}

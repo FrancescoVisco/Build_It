@@ -1937,6 +1937,11 @@ PrefabInstance:
       propertyPath: MaxObjects.Array.data[5]
       value: 1000000
       objectReference: {fileID: 0}
+    - target: {fileID: 7630607109450561766, guid: 3fb022f1ba8a2094f9b8c05d111b1c5d,
+        type: 3}
+      propertyPath: Rotspeed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7630607109612814733, guid: 3fb022f1ba8a2094f9b8c05d111b1c5d,
         type: 3}
       propertyPath: m_audioClip

@@ -362,7 +362,7 @@ PrefabInstance:
     - target: {fileID: 7674501843414280780, guid: b82b050f09f2cba4292ddb41e4863fe1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.55
+      value: 2.19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b82b050f09f2cba4292ddb41e4863fe1, type: 3}
@@ -783,6 +783,26 @@ PrefabInstance:
         type: 3}
       propertyPath: MaxObjects.Array.data[3]
       value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630607109450561766, guid: 3fb022f1ba8a2094f9b8c05d111b1c5d,
+        type: 3}
+      propertyPath: MaxObjects.Array.data[0]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630607109450561766, guid: 3fb022f1ba8a2094f9b8c05d111b1c5d,
+        type: 3}
+      propertyPath: MaxObjects.Array.data[1]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630607109450561766, guid: 3fb022f1ba8a2094f9b8c05d111b1c5d,
+        type: 3}
+      propertyPath: MaxObjects.Array.data[2]
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630607109450561766, guid: 3fb022f1ba8a2094f9b8c05d111b1c5d,
+        type: 3}
+      propertyPath: Rotspeed
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7630607109612814733, guid: 3fb022f1ba8a2094f9b8c05d111b1c5d,
         type: 3}
