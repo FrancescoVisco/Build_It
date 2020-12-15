@@ -164,14 +164,14 @@ public class Spawner : MonoBehaviour
         }*/
 
         //Cycle through the list of outlined objects
-        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
             CycleList(false);
             outlinedObjects[cycleIndex].transform.rotation = new Quaternion(0,0,0,0);
             RotAngle = new Quaternion(0,0,0,0);
         }
             
-        else if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        else if (Input.GetAxis("Mouse ScrollWheel") > 0)
         {
             CycleList(true);
             outlinedObjects[cycleIndex].transform.rotation = new Quaternion(0,0,0,0);
