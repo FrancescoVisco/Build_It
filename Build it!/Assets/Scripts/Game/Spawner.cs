@@ -129,6 +129,19 @@ public class Spawner : MonoBehaviour
                 SObjects += 1;    
                 AddObject(spawned);
                 NObjects[cycleIndex] += 1;  
+                
+                if(cycleIndex != MaxObjects.Length-1)
+                {
+                    spawnedObjectManager.audioController.PlayRandomClip(spawnedObjectManager.audioController.forwardNoteClips);
+                }
+                else
+                {
+                    spawnedObjectManager.audioController.PlayRandomClip(spawnedObjectManager.audioController.bombNoteClips);
+                }
+            }
+            else if(cycleIndex != MaxObjects.Length-1)
+            {
+                spawnedObjectManager.audioController.PlayRandomClip(spawnedObjectManager.audioController.reverseNoteClips);
             }
     
             if (spawnParticle != null && NObjects[cycleIndex] < MaxObjects[cycleIndex])
@@ -137,12 +150,13 @@ public class Spawner : MonoBehaviour
                 Destroy(particle, 3);
             }
 
+
             //animation
             //spawned.transform.DOScale(0, .25f).SetEase(Ease.OutBounce).From();
 
             //Play random forward audio clip
-            if(spawnedObjectManager.audioController != null)
-                spawnedObjectManager.audioController.PlayRandomClip(spawnedObjectManager.audioController.forwardNoteClips);
+            /*if(spawnedObjectManager.audioController != null)
+                spawnedObjectManager.audioController.PlayRandomClip(spawnedObjectManager.audioController.forwardNoteClips);*/
         }
         /*LeftShift + Mouse left click - Raycast and if you hit a spawned object, destroy it!
         else if (Input.GetKey(KeyCode.LeftShift) && Input.GetMouseButtonUp(0) && PauseOn == false)

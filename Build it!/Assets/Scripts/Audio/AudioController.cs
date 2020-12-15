@@ -24,6 +24,8 @@ public class AudioController : MonoBehaviour
     public AudioClip[] forwardNoteClips;
     [Tooltip("The reverse notes used when an element is destroyed.")]
     public AudioClip[] reverseNoteClips;
+    [Tooltip("The reverse notes used when an element is destroyed.")]
+    public AudioClip[] bombNoteClips;
 
 
     //Reset our mix when the game starts
