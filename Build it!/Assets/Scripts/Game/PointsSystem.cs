@@ -89,5 +89,15 @@ public class PointsSystem : MonoBehaviour
         {
             PlayerPrefs.SetInt("Level3", StarsActivated);
         }
+
+        if(SceneManager.GetActiveScene().buildIndex == 4)
+        {
+            PlayerPrefs.SetInt("Level4", StarsActivated);
+        }
+
+        if(SceneManager.GetActiveScene().buildIndex == 5)
+        {
+            PlayerPrefs.SetInt("Level5", StarsActivated);
+        }
     }
 }

@@ -33,6 +33,16 @@ public class LvSelector : MonoBehaviour
         {
             stars = PlayerPrefs.GetInt("Level3");
         }
+
+        if(SceneToLoad == 4)
+        {
+            stars = PlayerPrefs.GetInt("Level4");
+        }
+
+        if(SceneToLoad == 5)
+        {
+            stars = PlayerPrefs.GetInt("Level5");
+        }
           
         if(stars == 3)
         {
