@@ -28,7 +28,7 @@ public class UITimer : MonoBehaviour {
 
 	void Update () 
     {
-       if(time > 0 && GameOn == true && TimerOff == false && scene != 6)
+       if(time > 0 && GameOn == true && TimerOff == false && scene != 1)
        {
            time -= Time.deltaTime;
            fillImg.fillAmount = time/ timeAmt;

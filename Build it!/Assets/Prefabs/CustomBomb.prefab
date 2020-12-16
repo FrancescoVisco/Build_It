@@ -193,7 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 1
   power: 100
-  collisionThreshold: 1
+  collisionThreshold: 0.5
   explosionCountDown: 1.5
   blinkFrequency: 2
   explosiveMaterial: {fileID: 2100000, guid: d07790c6a6fce4f0fa708d832fa318ec, type: 2}
