@@ -804,11 +804,6 @@ PrefabInstance:
       propertyPath: Rotspeed
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7630607109612814733, guid: 3fb022f1ba8a2094f9b8c05d111b1c5d,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 97c15a7ca4bbe0e4d8b82cf26294bd5c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fb022f1ba8a2094f9b8c05d111b1c5d, type: 3}
 --- !u!1 &2089649692
@@ -1045,6 +1040,7 @@ MonoBehaviour:
   PanelGameOver: {fileID: 281461860}
   GameOn: 0
   TimerOff: 0
+  scene: 0
 --- !u!1 &3920210291967723771
 GameObject:
   m_ObjectHideFlags: 0

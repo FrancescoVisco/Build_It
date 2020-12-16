@@ -43,15 +43,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b67ca1c285c32454ca68277e022fc45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxBomb: 100000
   MaxObj: 0
   TimePerc: 0
   ObjPerc: 0
   PointPerc: 0
   GoalOn: 0
   Star1Perc: 0
-  Star2Perc: 40
-  Star3Perc: 80
+  Star2Perc: 30
+  Star3Perc: 60
   Star:
   - {fileID: 0}
   - {fileID: 0}
@@ -451,6 +450,7 @@ MonoBehaviour:
   PauseOn: 0
   GoalOn: 0
   TimerOff: 0
+  RObjects: 0
 --- !u!114 &7630607109450561767
 MonoBehaviour:
   m_ObjectHideFlags: 0

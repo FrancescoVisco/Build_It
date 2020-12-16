@@ -1091,6 +1091,7 @@ MonoBehaviour:
   PanelGameOver: {fileID: 1029912668}
   GameOn: 0
   TimerOff: 0
+  scene: 0
 --- !u!114 &567332594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1831,7 +1832,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 97c15a7ca4bbe0e4d8b82cf26294bd5c, type: 3}
+      objectReference: {fileID: 8300000, guid: 5fb5f4b0da9b16649b681fdca33c2463, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fb022f1ba8a2094f9b8c05d111b1c5d, type: 3}
 --- !u!1001 &1029912666
