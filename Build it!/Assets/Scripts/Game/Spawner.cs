@@ -129,17 +129,9 @@ public class Spawner : MonoBehaviour
                 SObjects += 1;    
                 AddObject(spawned);
                 NObjects[cycleIndex] += 1;  
-                
-                if(cycleIndex != MaxObjects.Length-1)
-                {
-                    spawnedObjectManager.audioController.PlayRandomClip(spawnedObjectManager.audioController.forwardNoteClips);
-                }
-                else
-                {
-                    spawnedObjectManager.audioController.PlayRandomClip(spawnedObjectManager.audioController.bombNoteClips);
-                }
+                spawnedObjectManager.audioController.PlayRandomClip(spawnedObjectManager.audioController.forwardNoteClips);
             }
-            else if(cycleIndex != MaxObjects.Length-1)
+            else if(cycleIndex != MaxObjects.Length)
             {
                 spawnedObjectManager.audioController.PlayRandomClip(spawnedObjectManager.audioController.reverseNoteClips);
             }

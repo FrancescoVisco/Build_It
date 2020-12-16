@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PointsSystem : MonoBehaviour
 {
-    public int MaxBomb;
+    //public int MaxBomb;
     public int MaxObj;
     int NObj;
     float MaxTime;
@@ -25,7 +25,7 @@ public class PointsSystem : MonoBehaviour
 
     void Start()
     {
-        MaxObj = (GameObject.Find("Managers").GetComponent<Spawner>().SMax) - MaxBomb;
+        MaxObj = (GameObject.Find("Managers").GetComponent<Spawner>().SMax);
         NObj = GameObject.Find("Managers").GetComponent<Spawner>().SObjects; 
         Time = GameObject.Find("Timer").GetComponent<UITimer>().time; 
         MaxTime = GameObject.Find("Timer").GetComponent<UITimer>().timeAmt; 

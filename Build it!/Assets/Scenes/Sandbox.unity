@@ -3913,7 +3913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fillImg: {fileID: 3920210292749947975}
-  timeAmt: 10000
+  timeAmt: 2147483647
   time: 0
   StartTimer: 1
   timeText: {fileID: 615011803}
