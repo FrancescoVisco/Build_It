@@ -54,6 +54,7 @@ public class Spawner : MonoBehaviour
     public bool PauseOn;
     public bool GoalOn;
     public bool TimerOff;
+    public int RObjects;
 
     void Start()
     {
@@ -108,6 +109,7 @@ public class Spawner : MonoBehaviour
         PauseOn = GameObject.Find("CanvasPause").GetComponent<UIPause>().GameIsPaused;
         GoalOn = GameObject.Find("LevelGoal").GetComponent<Goal>().GoalOn;
         TimerOff = GameObject.Find("Timer").GetComponent<UITimer>().TimerOff;
+        RObjects = SMax - SObjects;
         
         if(Input.GetMouseButton(1) && PauseOn == false && GoalOn == false && TimerOff == false)
         {

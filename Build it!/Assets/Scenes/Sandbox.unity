@@ -3913,13 +3913,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fillImg: {fileID: 3920210292749947975}
-  timeAmt: 2147483647
+  timeAmt: 60
   time: 0
   StartTimer: 1
   timeText: {fileID: 615011803}
   PanelGameOver: {fileID: 4595944015004927025}
   GameOn: 0
   TimerOff: 0
+  scene: 0
 --- !u!1 &3920210292749947979
 GameObject:
   m_ObjectHideFlags: 0

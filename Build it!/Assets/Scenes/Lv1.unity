@@ -264,6 +264,7 @@ MonoBehaviour:
   PanelGameOver: {fileID: 47239184}
   GameOn: 0
   TimerOff: 0
+  scene: 0
 --- !u!114 &143592456
 MonoBehaviour:
   m_ObjectHideFlags: 0

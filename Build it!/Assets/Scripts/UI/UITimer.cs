@@ -14,6 +14,7 @@ public class UITimer : MonoBehaviour {
     public GameObject PanelGameOver;
     public bool GameOn;
     public bool TimerOff = false;
+    public int scene;
 
 	void Start () 
     {
@@ -21,22 +22,27 @@ public class UITimer : MonoBehaviour {
        time = timeAmt;
        StartCoroutine(Timer());
        GameOn = false;
+       scene = SceneManager.GetActiveScene().buildIndex;
 	}
 	
 
 	void Update () 
     {
-       if(time > 0 && GameOn == true && TimerOff == false)
+       if(time > 0 && GameOn == true && TimerOff == false && scene != 6)
        {
            time -= Time.deltaTime;
            fillImg.fillAmount = time/ timeAmt;
            timeText.SetText(time.ToString("F0"));
+
+           if(GameObject.Find("LevelGoal").GetComponent<Goal>().TriggeredLine == false && (GameObject.Find("Managers").GetComponent<Spawner>().RObjects == 0))
+           {
+               StartCoroutine(Delay());  
+           }
        }
 
        if(time < 0)
        {
-           PanelGameOver.SetActive(true);
-           TimerOff = true;
+           StartCoroutine(Delay()); 
        }
 	}
 
@@ -44,5 +50,12 @@ public class UITimer : MonoBehaviour {
     {
        yield return new WaitForSeconds(StartTimer);
        GameOn = true;
+    }
+
+    IEnumerator Delay()
+    {
+       yield return new WaitForSeconds(0.7f);
+       PanelGameOver.SetActive(true);
+       TimerOff = true; 
     }
 }
